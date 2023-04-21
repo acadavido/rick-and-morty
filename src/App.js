@@ -1,25 +1,23 @@
 import './App.css';
-import Card from './components/Card.jsx';
 import Cards from './components/Cards.jsx';
 import SearchBar from './components/SearchBar.jsx';
-import characters, { Rick } from './data.js';
+import characters from './data.js';
+import styled from 'styled-components';
+
+const DivImgBackground = styled.div`
+   background-image: url(https://c.wallhere.com/photos/8d/ca/Rick_and_Morty_space-104692.jpg!d);
+   background-repeat: no-repeat;
+   background-size: cover;
+
+`
 
 function App() {
+   
    return (
-      <div className='App'>
+      <DivImgBackground className='App'>
          <SearchBar onSearch={(characterID) => window.alert(characterID)} />
          <Cards characters={characters} />
-         <Card
-            id={Rick.id}
-            name={Rick.name}
-            status={Rick.status}
-            species={Rick.species}
-            gender={Rick.gender}
-            origin={Rick.origin.name}
-            image={Rick.image}
-            onClose={() => window.alert('Emulamos que se cierra la card')}
-         />
-      </div>
+      </DivImgBackground>
    );
 }
 
