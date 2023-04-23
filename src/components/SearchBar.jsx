@@ -27,11 +27,15 @@ const ButtonAgregar = styled.button`
 
 `
 
-export default function SearchBar(props) {
+export default function SearchBar({id, setId, onSearch}) {
+
+   const handleChange=(idSearch)=>{
+      setId(idSearch)
+   }
    return (
       <DivSearch>
-         <InputSearch type='search'  placeholder="Busca tu personaje"/>
-         <ButtonAgregar onClick={props.onSearch}>Agregar</ButtonAgregar>
+         <InputSearch type='number'  placeholder="id..." onChange={(e)=>handleChange(e.target.value)}/>
+         <ButtonAgregar onClick={()=>onSearch(id)}>Agregar</ButtonAgregar>
       </DivSearch>
    );
 }

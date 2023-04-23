@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
+
 const DivCard = styled.div`
+   font-family: 'Raleway', sans-serif;
    display: flex;
    flex-direction: column;
    width: 300px;
@@ -61,18 +63,18 @@ const DivInfo = styled.div`
    padding: 0 30px;
 `
 
-export default function Card(props) {
+export default function Card({onClose, image, name, status, gender, id}) {
    return (
       <DivCard>
          <DivImg>
-            <ButtonX onClick={props.onClose}>X</ButtonX>
-            <img src={props.image} alt='' />
-            <H2Name>{props.name}</H2Name>
+            <ButtonX onClick={()=>onClose(id)}>X</ButtonX>
+            <img src={image} alt='' />
+            <H2Name>{name}</H2Name>
          </DivImg>
          <DivInfo>
-            <H2Property>{props.status}</H2Property>
+            <H2Property>{status}</H2Property>
             {/* <H2Property>{props.species}</H2Property> */}
-            <H2Property>{props.gender}</H2Property>
+            <H2Property>{gender}</H2Property>
             {/* <H2Property>{props.name.origin}</H2Property> */}
          </DivInfo>
       </DivCard>
