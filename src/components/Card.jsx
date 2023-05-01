@@ -1,4 +1,7 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+
 
 
 const DivCard = styled.div`
@@ -69,7 +72,11 @@ export default function Card({onClose, image, name, status, gender, id}) {
          <DivImg>
             <ButtonX onClick={()=>onClose(id)}>X</ButtonX>
             <img src={image} alt='' />
-            <H2Name>{name}</H2Name>
+            {/* <Link to="/detail">Home</Link> */}
+            <Link to={`/detail/${id}`} >
+               <H2Name className="card-name">{name}</H2Name>
+            </Link>
+            
          </DivImg>
          <DivInfo>
             <H2Property>{status}</H2Property>

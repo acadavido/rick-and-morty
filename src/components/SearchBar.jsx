@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Random from "./Random"
 
 const DivSearch = styled.div`
    display: flex;
@@ -10,9 +11,9 @@ const InputSearch = styled.input`
    margin: 5px;
 `
 
-const ButtonAgregar = styled.button`
+const ButtonAdd = styled.button`
    color: #48C9B0;
-
+   font-family: 'Raleway', sans-serif;
    background-color: black;
    border-radius: 5px;
    border-color: #48C9B0;
@@ -24,10 +25,9 @@ const ButtonAgregar = styled.button`
       background-color: #48C9B0;
       color: black;
    }
-
 `
 
-export default function SearchBar({id, setId, onSearch}) {
+export default function SearchBar({id, setId, onSearch, onRandom}) {
 
    const handleChange=(idSearch)=>{
       setId(idSearch)
@@ -35,7 +35,9 @@ export default function SearchBar({id, setId, onSearch}) {
    return (
       <DivSearch>
          <InputSearch type='number'  placeholder="id..." onChange={(e)=>handleChange(e.target.value)}/>
-         <ButtonAgregar onClick={()=>onSearch(id)}>Agregar</ButtonAgregar>
+         <ButtonAdd onClick={()=>onSearch(id)}>Add</ButtonAdd>
+         <Random onRandom={onRandom}/>
+         
       </DivSearch>
    );
 }

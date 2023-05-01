@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const RandomButton = styled.button`
    color: #48C9B0;
-
+   font-family: 'Raleway', sans-serif;
    background-color: black;
    border-radius: 5px;
    border-color: #48C9B0;
